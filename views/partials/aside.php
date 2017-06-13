@@ -17,7 +17,7 @@
           <ul class="dropdown-menu forAnimate" role="menu">
             <li><a href="../auth/registro.php">Crear</a></li>
             <li><a href="../dashboard/listUsuarios.php">Usuarios</a></li>
-            <li><a href="#">Reportar</a></li>
+            <li><a href="../dashboard/residente.php">Crear Residente</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li class="divider"></li>

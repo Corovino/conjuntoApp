@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include_once 'conexion.php';
 /**
 *  Clase que permite la gestión de los residentes 
 *.  
@@ -34,7 +34,9 @@ class Residente
 		
 
 		if ($resultado->execute()) {
-		    return true;
+			$res = "SELECT * FROM `usuario` ORDER BY `id` DESC LIMIT 1";
+			$response = self::$cnx->prepare($res);
+		    return $response;
 		}
 
 		return false;

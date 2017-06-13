@@ -22,21 +22,24 @@ class Usuario
 		 $data = [
 		 	"nombre" => $data['nombre'],
 		 	"numero_apto" => $data['numero_apto'],
-		 	"vehiculo" => $data['vehiculo'],
+		 	"vehiculo" => $data['vehiculo']
 
-		 ]
+		 ];
 
          $result = Resedente::postResidente($usuario);
 
          if($result){
-            $response = true;
+            return $result;
          }else{
             $response = false;
+            return $response;
          }
 
-         return $response;
+         
 
 	}
+
+
 
 }
 
