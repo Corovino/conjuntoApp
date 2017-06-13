@@ -80,6 +80,29 @@ class UsuarioDao extends Conexion
        
         return $usuario;
     }
+   
+	 /**
+	 * Metodo que sirve para obtener todos los  usuarios
+	 *
+	 * @param      object         $usuario
+	 * @return     object
+	 */
+    public static function getAllUsers()
+    {
+    	
+
+    	
+
+    	$query ="SELECT*FROM usuarios";
+    	self::getConexion();
+
+    	$resultado = self::$cnx->prepare($query);
+
+    	$resultado->execute();
+        //$filas = $resultado->fetch();
+ 
+        return $resultado;
+    }
 
     /**
      * Metodo que sirve para registrar usuarios
@@ -95,11 +118,11 @@ class UsuarioDao extends Conexion
 
         $resultado = self::$cnx->prepare($query);
 
-        $resultado->bindParam(":nombre", $usuario->getNombre());
-        $resultado->bindParam(":email", $usuario->getEmail());
-        $resultado->bindParam(":usuario", $usuario->getUsuario());
-        $resultado->bindParam(":password", $usuario->getPassword());
-        $resultado->bindParam(":privilegio", $usuario->getPrivilegio());
+        $resultado->bindParam(":nombre", $usuario['nombre']);
+        $resultado->bindParam(":email", $usuario['email']);
+        $resultado->bindParam(":usuario", $usuario['usuario']);
+        $resultado->bindParam(":password", $usuario['password']);
+        $resultado->bindParam(":privilegio", $usuario['privilegio']);
 
         if ($resultado->execute()) {
             return true;

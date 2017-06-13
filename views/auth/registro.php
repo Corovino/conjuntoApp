@@ -1,5 +1,8 @@
-<?php include 'partials/head.php';?>
-<?php include 'partials/menu.php';?>
+<?php
+ include '../partials/head.php';
+ include '../partials/menu.php';
+ include '../partials/aside.php';
+ ;?>
 
 <div class="container">
 
@@ -11,7 +14,7 @@
 			<div class="col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<form action="routes//registroCode.php" method="POST" role="form">
+						<form action=" " method="POST" role="form" id="registroForm">
 							<legend>Registro de usuarios</legend>
 							<div class="form-group">
 								<label for="nombre">Nombre</label>
@@ -33,7 +36,7 @@
 								<input type="password" name="txtPassword" class="form-control" required id="password" placeholder="****">
 							</div>
 
-							<button type="submit" class="btn btn-success">Registrar</button>
+							<button  class="btn btn-success"  onclick="Registro.registro();">Crear Usuario</button>
 						</form>
 					</div>
 				</div>
@@ -42,5 +45,8 @@
 	</div>
 
 </div><!-- /.container -->
+<?php 
+  include '../partials/footer.php';
+?>
+<script type="text/javascript" src="../assets/js/registro.js"></script>
 
-<?php include 'partials/footer.php';?>

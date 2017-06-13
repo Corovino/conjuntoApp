@@ -4,7 +4,7 @@ $(document).ready(function() {
         let data = 
         {
             method : $(this).attr("method"),
-            url : '../routes/loginCode.php',
+            url :'../routes/loginCode.php',
             data : $(this).serialize()
         }
         

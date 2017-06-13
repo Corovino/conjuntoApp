@@ -1,5 +1,5 @@
-<?php include '../partials/head.php';?>
-<?php include '../partials/menu.php';?>
+<?php include 'partials/head.php';?>
+<?php include 'partials/menu.php';?>
 
 <div class="container">
 

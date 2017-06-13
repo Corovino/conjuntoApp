@@ -8,7 +8,12 @@ if (isset($_SESSION["usuario"])) {
     header("location:../auth/login.php");
 }
 ?>
-<?php include 'partials/menu.php';?>
+<?php
+  require_once '../partials/menu.php';
+  require_once '../partials/aside.php';
+?>
+
+
 <div class="container">
 	<div class="starter-template">
 		<br>
