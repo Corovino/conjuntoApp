@@ -1,7 +1,7 @@
 <?php
 
-include '../../controller/UserController.php';
-/
+require_once '../../controller/UserController.php';
+
 
 session_start();
 
@@ -10,16 +10,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
            $data =[
              "nombre" => $_POST['nombre'],
-             "nombre" => $_POST['apto'],
-             "nombre" => $_POST['vehiculo']
+             "numero_apto" => $_POST['apto'],
+             "vehiculo" => $_POST['vehiculo']
            ];
 
-        
-        
 
-        if (UserController::postUsuarios()) {
-            $usuario   = UserController::getResidente($txtUsuario, $txtPassword);
-           
+        $usuario = Usuario::postUsuarios($data);
+
+        /*if($usuario){
+
+            $resultado = array("estado" => "true", "data" => $usuario );
+            return print (json_encode($resultado));
+        }*/
+
+
+        if ($usuario) {
+
             $resultado = array("estado" => "true", "data" => $usuario );
             return print(json_encode($resultado));
             //header("location:dashboard/admin.php");
@@ -28,5 +34,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } 
 
-$resultado = array("estado" => "false");
+$resultado = array("estado" => "false", "data" => $data);
 return print(json_encode($resultado));

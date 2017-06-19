@@ -1,5 +1,5 @@
 $(document).ready(function() {
- 
+
     $("#loginForm").bind("submit", function() {
         let data = 
         {

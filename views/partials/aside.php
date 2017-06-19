@@ -18,6 +18,7 @@
             <li><a href="../auth/registro.php">Crear</a></li>
             <li><a href="../dashboard/listUsuarios.php">Usuarios</a></li>
             <li><a href="../dashboard/residente.php">Crear Residente</a></li>
+            <li><a href="../dashboard/vehiculo.php">Crear Vehiculo</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li class="divider"></li>

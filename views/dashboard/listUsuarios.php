@@ -14,7 +14,7 @@
 			 <div class="col-md-10" style="padding-top: 60px;">
 				   <h1>Listado de. Usuarios</h1>
 
-				   <table>
+				   <table class="table">
 				   	<thead>
 				   		<tr>
 				   			<td>Nombre -   </td>
@@ -32,7 +32,7 @@
 				   	   	  	echo "<td contenteditable='true'><p>".$row['usuario']."</p></td>";
 				   	   	  	echo "<td contenteditable='true'> <p>".$row['email']."</p></td>";
 				   	   	  	echo "<td contenteditable='true'><p>".$row['fecha_registro']."</p></td>";
-				   	   	  	echo "<td ><button class='edit' id_edit=".$row['id'].">Editar</button></td>";
+				   	   	  	echo "<td ><button class='edit btn btn-primary' id_edit=".$row['id'].">Editar</button></td>";
 				   	   	  	echo "</tr>";
 				   	   	  
 				   	   	  }

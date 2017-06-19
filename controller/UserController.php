@@ -16,28 +16,44 @@ class Usuario
 		return $result;        
 	}
 
-	public function postUsuarios($data)
+	public static function postUsuarios($data)
 	{
          
 		 $data = [
+
 		 	"nombre" => $data['nombre'],
 		 	"numero_apto" => $data['numero_apto'],
 		 	"vehiculo" => $data['vehiculo']
-
 		 ];
 
-         $result = Resedente::postResidente($usuario);
+         $response = Residente::postResidente($data);
 
-         if($result){
-            return $result;
+         if ( $response ) {
+		     return self::getResidente();
          }else{
-            $response = false;
-            return $response;
+
+             return $response;
          }
 
-         
-
 	}
+
+	public static function getResidente()
+    {
+        $response =  Residente::getResidente();
+        return $response;
+    }
+
+    public static function getAllResidentes()
+    {
+         $response = Residente::getAllResidentes();
+         return $response;
+    }
+
+    public static function getAptoResidente()
+    {
+        $response = Residente::getAptoResidente();
+        return $response;
+    }
 
 
 
