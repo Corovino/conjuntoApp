@@ -44,7 +44,7 @@ class Residente
 		}catch (PDOException $e){
 
             $response  = ["status" => "false", "err"=> $e];
-			return $e;
+			return $response;
 
 		}
 

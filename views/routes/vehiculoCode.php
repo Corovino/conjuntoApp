@@ -20,18 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $vehiculo = VehiculoController::postVehiculo($data);
 
-        /*if($usuario){
-
-            $resultado = array("estado" => "true", "data" => $usuario );
-            return print (json_encode($resultado));
-        }*/
-
-
         if ($vehiculo) {
 
             $resultado = array("estado" => "true", "data" => $vehiculo );
             return print(json_encode($resultado));
-            //header("location:dashboard/admin.php");
+            
         }
 
     }
